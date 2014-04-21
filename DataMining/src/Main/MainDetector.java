@@ -9,8 +9,9 @@ public class MainDetector {
 	public static void main(String[] args) {
 		try{
 		InputStream inputStream = MainDetector.class.getResourceAsStream("test.txt");
-		String myString = IOUtils.toString(inputStream, "UTF-8");
-		System.out.println(myString);
+		String input = IOUtils.toString(inputStream, "UTF-8");
+		Trigram trigram = new Trigram();
+		trigram.FindTrigramAssociations(input);
 	}
 		catch(Exception e){
 			System.out.println("exception:+"+e.getLocalizedMessage());

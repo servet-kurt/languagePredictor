@@ -3,6 +3,8 @@ package English;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class EnglishTrigramWords {
 
 	List<String> trigrams = Arrays.asList("THE", "AND", "ING", "ENT", "ION",
@@ -10,12 +12,13 @@ public class EnglishTrigramWords {
 			"HAT", "ATE", "ALL", "ETH", "HIS", "OFT", "ITH", "FTH", "STH",
 			"OTH", "RES", "ONT", "ERE", "TIO", "HES", "VER");
 
-	public boolean isInTrigram(String word) {
+	public int isInTrigram(String word) {
+
 		for (String trigram : trigrams) {
-			if (word.contains(trigram)) {
-				return true;
+			if (word.toUpperCase().indexOf(trigram) != -1) {
+				return StringUtils.countMatches(word.toUpperCase(), trigram);
 			}
 		}
-		return false;
+		return 0;
 	}
 }
