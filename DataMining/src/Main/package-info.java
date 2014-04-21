@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author berkankurt
- *
- */
-package Main;
