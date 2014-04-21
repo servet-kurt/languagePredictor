@@ -20,8 +20,10 @@ public class Trigram {
 			frenchTrigramCount += frenchTrigramWords.trigramCounter(word);
 			germanTrigramCount += germanTrigramWords.trigramCounter(word);
 		}
-		System.out.println("English " + englishTrigramCount);
+		Evaluator.evaluate(englishTrigramCount,frenchTrigramCount,germanTrigramCount);
+		
+		/*System.out.println("English " + englishTrigramCount);
 		System.out.println("French " + frenchTrigramCount);
-		System.out.println("German " + germanTrigramCount);
+		System.out.println("German " + germanTrigramCount);*/
 	}
 }
